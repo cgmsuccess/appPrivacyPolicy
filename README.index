@@ -1,0 +1,14 @@
+Privacy Policy for PillMate
+Last updated: July 31, 2026
+
+1. Overview PillMate ("we", "our") is designed with absolute privacy in mind. PillMate operates 100% offline and locally on your iOS device. We do NOT collect, store, transmit, or share any of your personal health data, medication schedules, or usage information to any external servers or third parties.
+
+2. Personal Data & Health Information All medication records, dosages, schedules, and inventory tracking data stay exclusively inside your iPhone's local storage (UserDefaults). No user accounts, registration, or cloud servers are used.
+
+3. Camera & Local OCR Scanning PillMate uses your device's camera strictly for real-time, on-device optical character recognition (OCR) via Apple's native Vision framework to read medication packaging labels. Camera feeds and scanned text are processed entirely locally and are never recorded, saved, or transmitted anywhere.
+
+4. Third-Party Analytics & Ads PillMate contains zero third-party advertising, zero tracking SDKs, and zero analytics tools.
+
+5. Contact Us If you have any questions about this Privacy Policy, please contact us at: 
+
+cgm934654953@gmail.com
