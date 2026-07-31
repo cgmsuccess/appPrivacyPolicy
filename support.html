@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PillMate - Technical Support & Help Center</title>
+    <style>
+        :root {
+            --primary-color: #008080;
+            --primary-dark: #005959;
+            --accent-color: #ff9500;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-color: #1e293b;
+            --text-muted: #64748b;
+            --border-color: #e2e8f0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        /* Top Language Selector Bar */
+        .lang-bar {
+            background: #004d4d;
+            padding: 12px 20px;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .lang-btn {
+            background: rgba(255, 255, 255, 0.15);
+            color: white;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .lang-btn:hover, .lang-btn.active {
+            background: white;
+            color: var(--primary-dark);
+            border-color: white;
+        }
+
+        header {
+            background: linear-gradient(135deg, #008080, #005959);
+            color: white;
+            padding: 36px 20px;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .header-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .app-icon {
+            width: 72px;
+            height: 72px;
+            background: white;
+            border-radius: 18px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 36px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+            margin-bottom: 12px;
+        }
+
+        h1 {
+            margin: 8px 0 4px 0;
+            font-size: 28px;
+            font-weight: 700;
+        }
+
+        p.subtitle {
+            margin: 0;
+            opacity: 0.9;
+            font-size: 15px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border-radius: 16px;
+            padding: 24px;
+            margin-bottom: 24px;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 2px 6px rgba(0,0,0,0.03);
+        }
+
+        h2 {
+            color: var(--primary-color);
+            font-size: 20px;
+            margin-top: 0;
+            border-bottom: 2px solid #f1f5f9;
+            padding-bottom: 10px;
+        }
+
+        .faq-item {
+            margin-bottom: 20px;
+        }
+
+        .faq-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .faq-question {
+            font-weight: 600;
+            font-size: 16px;
+            color: var(--text-color);
+            margin-bottom: 6px;
+        }
+
+        .faq-answer {
+            color: var(--text-muted);
+            font-size: 14px;
+            margin: 0;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: white;
+            text-decoration: none;
+            padding: 10px 22px;
+            border-radius: 10px;
+            font-weight: 600;
+            font-size: 14px;
+            transition: background-color 0.2s;
+        }
+
+        .btn:hover {
+            background-color: var(--primary-dark);
+        }
+
+        .lang-content {
+            display: none;
+        }
+
+        .lang-content.active {
+            display: block;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px 20px;
+            color: var(--text-muted);
+            font-size: 13px;
+            border-top: 1px solid var(--border-color);
+            margin-top: 40px;
+        }
+
+        footer a {
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Language Selector Bar -->
+<div class="lang-bar">
+    <button class="lang-btn active" onclick="setLanguage('en')">🇺🇸 English</button>
+    <button class="lang-btn" onclick="setLanguage('ja')">🇯🇵 日本語</button>
+    <button class="lang-btn" onclick="setLanguage('ko')">🇰🇷 한국어</button>
+    <button class="lang-btn" onclick="setLanguage('de')">🇩🇪 Deutsch</button>
+</div>
+
+<header>
+    <div class="header-content">
+        <div class="app-icon">💊</div>
+        <h1 id="header-title">PillMate Support Center</h1>
+        <p class="subtitle" id="header-subtitle">Daily Medication Reminder & Health Companion</p>
+    </div>
+</header>
+
+<div class="container">
+
+    <!-- ENGLISH CONTENT -->
+    <div id="content-en" class="lang-content active">
+        <div class="card">
+            <h2>🔒 Privacy & Data Protection</h2>
+            <div class="faq-item">
+                <div class="faq-question">Q: Does PillMate collect or upload my health data?</div>
+                <div class="faq-answer">
+                    <strong>No.</strong> PillMate operates 100% offline. All your medication reminders, dosage logs, and stock counts are stored strictly on your local device. We run zero external servers and collect no personal health information.
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>❓ Frequently Asked Questions</h2>
+            <div class="faq-item">
+                <div class="faq-question">🔔 Q: What should I do if I miss notification chimes?</div>
+                <div class="faq-answer">
+                    1. Verify that Notifications are enabled in iOS Settings > PillMate.<br>
+                    2. Note that when the physical Silent Switch is turned ON, alarms will vibrate without sound.<br>
+                    3. Ensure Time Sensitive Notifications are allowed to let chimes pop up on schedule.
+                </div>
+            </div>
+            <div class="faq-item" style="margin-top: 16px;">
+                <div class="faq-question">📦 Q: How does automatic stock tracking work?</div>
+                <div class="faq-answer">
+                    When adding a medication, you can set your remaining pill count. Each time you mark "Taken", your stock decreases by 1. When stock reaches 0, PillMate automatically pauses future alarms and notifies you to restock.
+                </div>
+            </div>
+            <div class="faq-item" style="margin-top: 16px;">
+                <div class="faq-question">🔍 Q: How do I use the Vision OCR Reader & Night Flashlight?</div>
+                <div class="faq-answer">
+                    Go to the <strong>Care Tools</strong> tab. Tap <i>Large Text Scanner</i> to point your camera at prescription labels for magnified text display and voice reading. Tap <i>Night Flashlight</i> for quick illumination during late-night dosage checks.
+                </div>
+            </div>
+        </div>
+
+        <div class="card" style="text-align: center;">
+            <h2>✉️ Contact Support</h2>
+            <p style="color: var(--text-muted); font-size: 14px;">Have questions, issues, or suggestions? Reach out to us anytime!</p>
+            <p style="font-size: 16px; font-weight: 600; color: var(--primary-color);">
+                📧 Support Email: <a href="mailto:cgmsuccess@github.io" style="color: var(--primary-color);">cgmsuccess@github.io</a>
+            </p>
+            <div style="margin-top: 20px;">
+                <a href="README.html" class="btn">View Privacy Policy</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- JAPANESE CONTENT -->
+    <div id="content-ja" class="lang-content">
+        <div class="card">
+            <h2>🔒 プライバシーとデータ保護</h2>
+            <div class="faq-item">
+                <div class="faq-question">Q: 個人情報や服薬データは送信されますか？</div>
+                <div class="faq-answer">
+                    <strong>一切送信されません。</strong> お薬リマインダーは100%完全オフラインで動作します。すべての服薬スケジュールや在庫記録は端末内にのみ保存され、外部サーバーへの送信や収集は行われません。
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>❓ よくある質問</h2>
+            <div class="faq-item">
+                <div class="faq-question">🔔 Q: 通知音が鳴らない場合はどうすればよいですか？</div>
+                <div class="faq-answer">
+                    1. iPhoneの「設定」>「お薬リマインダー」で通知許可がオンになっているか確認してください。<br>
+                    2. マナーモード（消音スイッチ）がオンの場合はバイブレーションのみとなります。<br>
+                    3. 確実にアラームを受け取るため「タイムセンシティブ通知」を有効にしてください。
+                </div>
+            </div>
+            <div class="faq-item" style="margin-top: 16px;">
+                <div class="faq-question">📦 Q: 残薬の自動管理はどのように機能しますか？</div>
+                <div class="faq-answer">
+                    お薬の登録時に「残り錠数」を設定すると、「服用済み」をタップするたびに残数が自動で減算されます。残数が 0 になると自動で通知を一時停止し、補充を促します。
+                </div>
+            </div>
+            <div class="faq-item" style="margin-top: 16px;">
+                <div class="faq-question">🔍 Q: 大文字スキャナーと夜間ライトの使い方</div>
+                <div class="faq-answer">
+                    <strong>安心ツール</strong>タブを開きます。「大文字スキャナー」でお薬のパッケージにかざすと文字が拡大表示され、音声読み上げも可能です。「夜間ライト」で夜間の服薬時にワンタップで点灯できます。
+                </div>
+            </div>
+        </div>
+
+        <div class="card" style="text-align: center;">
+            <h2>✉️ サポートとお問い合わせ</h2>
+            <p style="color: var(--text-muted); font-size: 14px;">ご質問やご要望がございましたら、お気軽にお問い合わせください。</p>
+            <p style="font-size: 16px; font-weight: 600; color: var(--primary-color);">
+                📧 メールサポート: <a href="mailto:cgmsuccess@github.io" style="color: var(--primary-color);">cgmsuccess@github.io</a>
+            </p>
+            <div style="margin-top: 20px;">
+                <a href="README.html" class="btn">プライバシーポリシーを見る</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- KOREAN CONTENT -->
+    <div id="content-ko" class="lang-content">
+        <div class="card">
+            <h2>🔒 개인정보 보호 및 데이터 안전</h2>
+            <div class="faq-item">
+                <div class="faq-question">Q: 개인 건강 데이터가 외부로 전송되나요?</div>
+                <div class="faq-answer">
+                    <strong>전혀 전송되지 않습니다.</strong> '약 먹을 시간'은 100% 오프라인으로 작동합니다. 모든 복용 일정과 잔여 수량 기록은 기기 내부에만 저장되며, 외부 서버로 수집되거나 공유되지 않습니다.
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>❓ 자주 묻는 질문</h2>
+            <div class="faq-item">
+                <div class="faq-question">🔔 Q: 알림음이 울리지 않을 때는 어떻게 해야 하나요?</div>
+                <div class="faq-answer">
+                    1. iPhone 설정 > 약 먹을 시간에서 알림 권한이 허용되어 있는지 확인하세요.<br>
+                    2. 물리적 무음 스위치가 켜져 있는 경우 알림이 진동으로만 울립니다.<br>
+                    3. 알림을 놓치지 않도록 '시간 감수성 알림'을 활성화해 주세요.
+                </div>
+            </div>
+            <div class="faq-item" style="margin-top: 16px;">
+                <div class="faq-question">📦 Q: 잔여 수량 자동 관리 기능은 어떻게 작동하나요?</div>
+                <div class="faq-answer">
+                    약 등록 시 남은 수량을 입력하면 '복용 완료'를 누를 때마다 수량이 1개씩 자동으로 차감됩니다. 수량이 0이 되면 자동으로 이후 알림이 정지되며 재구매 알림을 드립니다.
+                </div>
+            </div>
+            <div class="faq-item" style="margin-top: 16px;">
+                <div class="faq-question">🔍 Q: 큰 글씨 스캐너 및 야간 라이트 사용 방법</div>
+                <div class="faq-answer">
+                    <strong>돌봄 도구</strong> 탭에서 '약 라벨 큰 글씨 스캐너'를 열어 카메라를 약 상자에 대면 글씨가 크게 표시되고 음성 읽기가 가능합니다. '야간 라이트'를 탭하면 밤중 복용 시 조명을 켤 수 있습니다.
+                </div>
+            </div>
+        </div>
+
+        <div class="card" style="text-align: center;">
+            <h2>✉️ 고객 지원 및 문의</h2>
+            <p style="color: var(--text-muted); font-size: 14px;">문의 사항이나 의견이 있으시면 언제든지 연락해 주세요.</p>
+            <p style="font-size: 16px; font-weight: 600; color: var(--primary-color);">
+                📧 지원 이메일: <a href="mailto:cgmsuccess@github.io" style="color: var(--primary-color);">cgmsuccess@github.io</a>
+            </p>
+            <div style="margin-top: 20px;">
+                <a href="README.html" class="btn">개인정보 처리방침 보기</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- GERMAN CONTENT -->
+    <div id="content-de" class="lang-content">
+        <div class="card">
+            <h2>🔒 Datenschutz & Sicherheit</h2>
+            <div class="faq-item">
+                <div class="faq-question">F: Werden meine Gesundheitsdaten hochgeladen oder erfasst?</div>
+                <div class="faq-answer">
+                    <strong>Nein.</strong> Tabletten-Wecker funktioniert zu 100 % offline. Alle Ihre Erinnerungen und Vorratsdaten werden ausschließlich lokal auf Ihrem iPhone gespeichert. Wir betreiben keine externen Server.
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>❓ Häufig gestellte Fragen (FAQ)</h2>
+            <div class="faq-item">
+                <div class="faq-question">🔔 F: Was kann ich tun, wenn keine Erinnerungen ertönen?</div>
+                <div class="faq-answer">
+                    1. Überprüfen Sie in den iOS-Einstellungen > Tabletten-Wecker, ob Mitteilungen erlaubt sind.<br>
+                    2. Bei aktiviertem Stummschalter ertönt nur die Vibration.<br>
+                    3. Aktivieren Sie "Zeitkritische Mitteilungen", um pünktliche Alarme zu gewährleisten.
+                </div>
+            </div>
+            <div class="faq-item" style="margin-top: 16px;">
+                <div class="faq-question">📦 F: Wie funktioniert die automatische Vorratsverwaltung?</div>
+                <div class="faq-answer">
+                    Tragen Sie beim Hinzufügen Ihren Vorrat ein. Bei jedem Bestätigen "Eingenommen" verringert sich die Anzahl um 1. Bei Vorrat 0 pausieren weitere Alarme automatisch.
+                </div>
+            </div>
+            <div class="faq-item" style="margin-top: 16px;">
+                <div class="faq-question">🔍 F: Wie nutze ich den Großtext-Scanner & das Nachtlicht?</div>
+                <div class="faq-answer">
+                    Öffnen Sie den Tab <strong>Hilfen</strong>. Wählen Sie <i>Großtext-Scanner</i>, um die Kamera auf Packungsbeilagen zu richten. Nutzen Sie <i>Nachtlicht</i> für schnelles Licht bei nächtlicher Einnahme.
+                </div>
+            </div>
+        </div>
+
+        <div class="card" style="text-align: center;">
+            <h2>✉️ Kundenservice & Support</h2>
+            <p style="color: var(--text-muted); font-size: 14px;">Haben Sie Fragen oder Feedback? Schreiben Sie uns gerne!</p>
+            <p style="font-size: 16px; font-weight: 600; color: var(--primary-color);">
+                📧 Support-E-Mail: <a href="mailto:cgmsuccess@github.io" style="color: var(--primary-color);">cgmsuccess@github.io</a>
+            </p>
+            <div style="margin-top: 20px;">
+                <a href="README.html" class="btn">Datenschutzerklärung anzeigen</a>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<footer>
+    <p>© 2026 PillMate. All rights reserved.</p>
+    <p><a href="README.html">Privacy Policy</a> | <a href="#">Support</a></p>
+</footer>
+
+<script>
+    const titles = {
+        en: { title: "PillMate Support Center", subtitle: "Daily Medication Reminder & Health Companion" },
+        ja: { title: "お薬リマインダー サポートセンター", subtitle: "飲み忘れ防止服薬管理＆安心ツール" },
+        ko: { title: "약 먹을 시간 지원 센터", subtitle: "알약 복용 알림 & 약상자 스캔 도구" },
+        de: { title: "Tabletten-Wecker Support", subtitle: "Einnahme Erinnerung & Vorrat" }
+    };
+
+    function setLanguage(lang) {
+        document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
+        document.querySelectorAll('.lang-content').forEach(el => el.classList.remove('active'));
+
+        const targetBtn = Array.from(document.querySelectorAll('.lang-btn')).find(btn => btn.getAttribute('onclick').includes(lang));
+        if (targetBtn) targetBtn.classList.add('active');
+
+        const targetContent = document.getElementById('content-' + lang);
+        if (targetContent) targetContent.classList.add('active');
+
+        if (titles[lang]) {
+            document.getElementById('header-title').innerText = titles[lang].title;
+            document.getElementById('header-subtitle').innerText = titles[lang].subtitle;
+        }
+    }
+</script>
+
+</body>
+</html>
